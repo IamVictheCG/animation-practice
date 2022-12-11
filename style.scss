@@ -2,18 +2,18 @@ body {
     background-color: lightblue;
     margin: 0%;
     // text-align: center;
-    height: 100vh;
-    overflow-y: hidden;
+    // overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 // .wrapper {
-//     width: 100%;
+    //     width: 100%;
 //     padding: 20px;
 //     box-sizing: border-box;
     
 //     img {
-//         // transform: translate(200px, 200px);        
-//         transform: rotateZ(90deg);
+    //         // transform: translate(200px, 200px);        
+    //         transform: rotateZ(90deg);
 //         // transform: scale(1, 1);
 //         // transform: translateY(200px);
 //         border: 2px solid rgb(86, 177, 207);
@@ -22,29 +22,29 @@ body {
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.con {
+.screen1 {
     // border:  2px solid darkcyan;
     width: 100%;
-    height: 400px;
+    height: 100vh;
     
     
     .sky {
         // border: 1px solid rgb(23, 0, 139);
         background-color: lightblue;
         width: 100%;
-        height: 55%;
+        height: 40%;
     }
     .grass {
         // border: 1px solid rgb(23, 0, 139);
         background-color: green;
         width: 100%;
-        height: 42%;
+        height: 27%;
     }
     .road {
         // border: 1px solid rgb(23, 0, 139);
         background-color: gray;
         width: 100%;
-        height: 50.9%;
+        height: 33%;
         
 
         .line {
@@ -67,22 +67,39 @@ body {
 
 #car1 {
     position: absolute;
-    top: 320px;
+    top: 300px;
     left: 0px;
+    z-index: 2;
 }
 
 #car2 {
     position: absolute;
     top: 456px;
     left: 0px;
+    z-index: 2;
 }
 
 #sonic {
+    // border: 2px solid saddlebrown;
     width: 20%;
     position: absolute;
     top: 320px;
     right: -288px;
     transform: rotateY(180deg);
+    z-index: 2;
+}
+
+#shadow {
+    height: 24vh;
+    // border: 2px solid saddlebrown;
+    width: 20%;
+    position: absolute;
+    top: 330px;
+    right: -288px;
+    transform: rotateY(180deg);
+    z-index: 2;
+    animation-name: run;
+    animation-delay: 0.8s;
 }
 
 .forward {
@@ -92,8 +109,8 @@ body {
 
 .backward {
     animation: run 5s linear forwards ;
-    animation-delay: 0.5s;
-    // animation-iteration-count: 2;
+    animation-delay: 0.3s;
+    // animation-iteration-count: 222;
 }
 
 @keyframes drive {
@@ -114,4 +131,13 @@ body {
         right: 12111px;
     }
 
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+.void {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
 }

@@ -1,30 +1,29 @@
 body {
   background-color: lightblue;
   margin: 0%;
-  height: 100vh;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-.con {
+.screen1 {
   width: 100%;
-  height: 400px;
+  height: 100vh;
 }
-.con .sky {
+.screen1 .sky {
   background-color: lightblue;
   width: 100%;
-  height: 55%;
+  height: 40%;
 }
-.con .grass {
+.screen1 .grass {
   background-color: green;
   width: 100%;
-  height: 42%;
+  height: 27%;
 }
-.con .road {
+.screen1 .road {
   background-color: gray;
   width: 100%;
-  height: 50.9%;
+  height: 33%;
 }
-.con .road .line {
+.screen1 .road .line {
   border-color: white;
   border-style: dashed;
   border-bottom: none;
@@ -37,14 +36,16 @@ body {
 
 #car1 {
   position: absolute;
-  top: 320px;
+  top: 300px;
   left: 0px;
+  z-index: 2;
 }
 
 #car2 {
   position: absolute;
   top: 456px;
   left: 0px;
+  z-index: 2;
 }
 
 #sonic {
@@ -53,6 +54,21 @@ body {
   top: 320px;
   right: -288px;
   transform: rotateY(180deg);
+  z-index: 2;
+}
+
+#shadow {
+  height: 24vh;
+  width: 20%;
+  position: absolute;
+  top: 330px;
+  right: -288px;
+  transform: rotateY(180deg);
+  z-index: 2;
+  -webkit-animation-name: run;
+          animation-name: run;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
 .forward {
@@ -63,8 +79,8 @@ body {
 .backward {
   -webkit-animation: run 5s linear forwards;
           animation: run 5s linear forwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 @-webkit-keyframes drive {
@@ -99,4 +115,9 @@ body {
   to {
     right: 12111px;
   }
+}
+.void {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */
