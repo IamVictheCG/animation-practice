@@ -1,5 +1,4 @@
 body {
-  background-color: lightblue;
   margin: 0%;
   overflow-x: hidden;
 }
@@ -36,22 +35,24 @@ body {
 
 #car1 {
   position: absolute;
-  top: 300px;
+  top: 170px;
   left: 0px;
   z-index: 2;
+  width: 25%;
 }
 
 #car2 {
   position: absolute;
-  top: 456px;
+  top: 259px;
   left: 0px;
   z-index: 2;
+  width: 28%;
 }
 
 #sonic {
   width: 20%;
   position: absolute;
-  top: 320px;
+  top: 200px;
   right: -288px;
   transform: rotateY(180deg);
   z-index: 2;
@@ -61,31 +62,31 @@ body {
   height: 24vh;
   width: 20%;
   position: absolute;
-  top: 330px;
+  top: 227px;
   right: -288px;
   transform: rotateY(180deg);
   z-index: 2;
   -webkit-animation-name: run;
           animation-name: run;
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  -webkit-animation-delay: 0.85s;
+          animation-delay: 0.85s;
 }
 
 .forward {
-  -webkit-animation: drive 2s linear both;
-          animation: drive 2s linear both;
+  -webkit-animation: drive 2.3s linear both;
+          animation: drive 2.3s linear both;
 }
 
 .backward {
-  -webkit-animation: run 5s linear forwards;
-          animation: run 5s linear forwards;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  -webkit-animation: run 17s linear forwards;
+          animation: run 17s linear forwards;
+  -webkit-animation-delay: 0.53s;
+          animation-delay: 0.53s;
 }
 
 @-webkit-keyframes drive {
   from {
-    transform: translateX(0);
+    transform: translateX(-300px);
   }
   to {
     transform: translateX(1111px);
@@ -94,7 +95,7 @@ body {
 
 @keyframes drive {
   from {
-    transform: translateX(0);
+    transform: translateX(-300px);
   }
   to {
     transform: translateX(1111px);
@@ -105,7 +106,7 @@ body {
     right: -88px;
   }
   to {
-    right: 12111px;
+    right: 122111px;
   }
 }
 @keyframes run {
@@ -113,11 +114,182 @@ body {
     right: -88px;
   }
   to {
-    right: 12111px;
+    right: 122111px;
   }
 }
 .void {
+  z-index: 11;
+  position: relative;
   height: 100vh;
   width: 100%;
+  background-color: rgb(88, 10, 242);
+  margin: 0px;
+}
+
+#screen2 {
+  height: 100vh;
+  background-color: rgb(10, 62, 107);
+  margin: 0px;
+  position: relative;
+  overflow-y: hidden;
+}
+#screen2 .board {
+  position: absolute;
+  left: 32%;
+  border: solid 2px rgb(197, 223, 6);
+  width: 34%;
+  background-color: rgb(227, 223, 121);
+  transform-origin: 6px 6px;
+  -webkit-animation: drop 1.8s linear 0s 1 forwards, swing 4.27s linear 5s 1 forwards, fall 1s linear 12.86s 1 forwards;
+          animation: drop 1.8s linear 0s 1 forwards, swing 4.27s linear 5s 1 forwards, fall 1s linear 12.86s 1 forwards;
+}
+#screen2 .board i {
+  padding: 3px 6px 3px 6px;
+  background-color: rgb(75, 75, 62);
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  -webkit-animation: screw 2.27s linear 10.89s 1 forwards;
+          animation: screw 2.27s linear 10.89s 1 forwards;
+}
+#screen2 .board h2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+#screen2 .board p {
+  font-size: 12px;
+  text-align: center;
+  margin: auto;
+  width: 260px;
+}
+#screen2 .board .email {
+  background-color: white;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: rgb(197, 223, 6) solid 1px;
+  border-radius: 3px;
+}
+#screen2 .board .email input {
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+#screen2 .board .email button {
+  border-radius: 3px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
   background-color: black;
+  color: white;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    transform: translateY(-369px);
+  }
+  20% {
+    transform: translateY(40%);
+  }
+  40% {
+    transform: translateY(14%);
+  }
+  60% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-369px);
+  }
+  20% {
+    transform: translateY(40%);
+  }
+  40% {
+    transform: translateY(14%);
+  }
+  60% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(20%);
+  }
+}
+@-webkit-keyframes screw {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes screw {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes swing {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: translateY(20%) rotateZ(100deg);
+  }
+  50% {
+    transform: translateY(20%) rotateZ(58deg);
+  }
+  70% {
+    transform: translateY(20%) rotateZ(92deg);
+  }
+  80% {
+    transform: translateY(20%) rotateZ(75deg);
+  }
+  100% {
+    transform: translateY(20%) rotateZ(79deg);
+  }
+}
+@keyframes swing {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: translateY(20%) rotateZ(100deg);
+  }
+  50% {
+    transform: translateY(20%) rotateZ(58deg);
+  }
+  70% {
+    transform: translateY(20%) rotateZ(92deg);
+  }
+  80% {
+    transform: translateY(20%) rotateZ(75deg);
+  }
+  100% {
+    transform: translateY(20%) rotateZ(79deg);
+  }
+}
+@-webkit-keyframes fall {
+  from {
+    transform: translateY(20%) rotateZ(79deg);
+  }
+  to {
+    transform: translateY(600%) rotateZ(79deg);
+  }
+}
+@keyframes fall {
+  from {
+    transform: translateY(20%) rotateZ(79deg);
+  }
+  to {
+    transform: translateY(600%) rotateZ(79deg);
+  }
 }/*# sourceMappingURL=style.css.map */

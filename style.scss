@@ -1,9 +1,9 @@
 body {
-    background-color: lightblue;
+    // background-color: lightblue;
     margin: 0%;
     // text-align: center;
-    // overflow-y: hidden;
     overflow-x: hidden;
+    // overflow: hidden;
 }
 
 // .wrapper {
@@ -39,6 +39,15 @@ body {
         background-color: green;
         width: 100%;
         height: 27%;
+
+        // .mountain {
+        //     // width: 60px;
+        //     // height: 60px;
+        //     // background-color: black;
+        //     border-bottom: 74px solid black;
+        //     border-left: 37px solid transparent;
+        //     border-right: 372px solid transparent;
+        // }
     }
     .road {
         // border: 1px solid rgb(23, 0, 139);
@@ -67,23 +76,25 @@ body {
 
 #car1 {
     position: absolute;
-    top: 300px;
+    top: 170px;
     left: 0px;
     z-index: 2;
+    width: 25%;
 }
 
 #car2 {
     position: absolute;
-    top: 456px;
+    top: 259px;
     left: 0px;
     z-index: 2;
+    width: 28%;
 }
 
 #sonic {
     // border: 2px solid saddlebrown;
     width: 20%;
     position: absolute;
-    top: 320px;
+    top: 200px;
     right: -288px;
     transform: rotateY(180deg);
     z-index: 2;
@@ -94,28 +105,28 @@ body {
     // border: 2px solid saddlebrown;
     width: 20%;
     position: absolute;
-    top: 330px;
+    top: 227px;
     right: -288px;
     transform: rotateY(180deg);
     z-index: 2;
     animation-name: run;
-    animation-delay: 0.8s;
+    animation-delay: 0.85s;
 }
 
 .forward {
-    animation: drive 2s linear both ;
-    // animation-iteration-count: 2;
+    animation: drive 2.3s linear both ;
+    // animation-iteration-count: 222;
 }
 
 .backward {
-    animation: run 5s linear forwards ;
-    animation-delay: 0.3s;
+    animation: run 17s linear forwards ;
+    animation-delay: 0.53s;
     // animation-iteration-count: 222;
 }
 
 @keyframes drive {
     from {
-        transform: translateX(0);
+        transform: translateX(-300px);
     }
     to {
         transform: translateX(1111px);
@@ -128,7 +139,7 @@ body {
         right: -88px;
     }
     to {
-        right: 12111px;
+        right: 122111px;
     }
 
 }
@@ -137,7 +148,143 @@ body {
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 
 .void {
+    z-index: 11;
+    position: relative;
+    // display: block;
     height: 100vh;
     width: 100%;
-    background-color: black;
+    background-color: rgb(88, 10, 242);
+    margin: 0px;
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+#screen2 {    
+    // border: solid 1.1px rgb(10, 62, 107);
+    height: 100vh;
+    background-color: rgb(10, 62, 107);
+    margin: 0px;
+    position: relative;
+    overflow-y: hidden;
+    
+    .board {
+        position: absolute;
+        left: 32%;
+        // top: 20%;
+        border: solid 2px rgb(197, 223, 6);
+        width: 34%;
+        background-color: rgb(227, 223, 121);
+        transform-origin: 6px 6px;
+        animation: drop 1.8s linear 0s 1 forwards,
+                   swing 4.27s linear 5s 1 forwards,
+                   fall 1s linear 12.86s 1 forwards;
+        
+        i {
+            // height: 18px;
+            padding: 3px 6px 3px 6px;
+            background-color: rgb(75, 75, 62);
+            color: rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            animation: screw 2.27s linear 10.89s 1 forwards;
+        }
+        
+        h2 {
+            text-align: center;
+            // margin: auto;
+            // width: fit-content;
+            color:rgb(255, 255, 255);
+        }
+
+        p {
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            // border: black 2px solid;
+            width: 260px;
+        }
+
+        .email {
+            background-color: white;
+            display: flex;
+            width: fit-content;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: rgb(197, 223, 6) solid 1px;
+            border-radius: 3px;
+
+            input {
+                border-top-right-radius: 0%;
+                border-bottom-right-radius: 0%;
+            }
+            
+            button {
+                border-radius: 3px;
+                border-top-left-radius: 0%;
+                border-bottom-left-radius: 0%;
+                background-color: black;
+                color: white;
+            }
+
+        }
+    }
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-369px);
+    }
+    20% {
+        transform: translateY(40%);
+    }
+    40% {
+        transform: translateY(14%);
+    }
+    60% {
+        transform: translateY(30%);
+    }
+    100% {
+        transform: translateY(20%);
+    }
+}
+
+@keyframes screw {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: translateY(20%) rotateZ(100deg);
+    }
+    50% {
+        transform: translateY(20%) rotateZ(58deg);
+    }
+    70% {
+        transform: translateY(20%) rotateZ(92deg);
+    }
+    80% {
+        transform: translateY(20%) rotateZ(75deg);
+    }
+    100% {
+        transform: translateY(20%) rotateZ(79deg);
+    }
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(20%) rotateZ(79deg);
+    }
+    to {
+        transform: translateY(600%) rotateZ(79deg);
+    }
 }
